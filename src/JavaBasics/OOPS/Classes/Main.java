@@ -1,4 +1,4 @@
-package OOPS.Basics.Classes;
+package JavaBasics.OOPS.Basics.Classes;
 
 public class Main {
     public static void main(String[] args) {

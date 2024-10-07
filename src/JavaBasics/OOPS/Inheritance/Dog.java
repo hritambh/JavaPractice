@@ -1,4 +1,4 @@
-package OOPS.Basics.Inheritance;
+package JavaBasics.OOPS.Basics.Inheritance;
 
 public class Dog extends Animal{
     @Override

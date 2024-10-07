@@ -1,4 +1,4 @@
-package OOPS.Basics.Classes;
+package JavaBasics.OOPS.Basics.Classes;
 
 public class Person {
     private String name ;
