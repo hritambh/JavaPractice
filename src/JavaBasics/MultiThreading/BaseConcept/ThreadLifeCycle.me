@@ -1,0 +1,54 @@
+In multithreading, a thread can be in various states during its lifecycle. These states represent the different phases a thread goes through, from creation to termination. The Java Thread class defines six possible thread states:
+
+1. NEW
+Description: A thread is in this state when it has been created but not yet started. It is essentially the initial state of a thread.
+Trigger: After calling new Thread(), but before start().
+Code Example:
+java
+Copy code
+Thread t = new Thread();
+// t is in the NEW state
+2. RUNNABLE
+Description: A thread is in this state when it is eligible to run, meaning it can execute in the Java Virtual Machine (JVM). However, it may be waiting for CPU time because multiple threads could be in this state.
+Trigger: After calling start(), the thread enters this state and the run() method is invoked.
+Code Example:
+java
+Copy code
+t.start();
+// t is now RUNNABLE, ready to execute
+3. BLOCKED
+Description: A thread is in the BLOCKED state when it is waiting to acquire a lock or monitor that another thread currently holds. It cannot proceed until the lock is released.
+Trigger: When a thread tries to enter a synchronized block or method and the lock is not available.
+Code Example:
+
+synchronized(someObject) {
+    // if another thread holds the lock on 'someObject', the current thread is BLOCKED
+}
+
+4. WAITING
+Description: A thread is in this state when it is waiting indefinitely for another thread to perform a particular action. This state occurs when a thread calls methods like Object.wait() or Thread.join() without a timeout.
+Trigger: When a thread calls wait() or join() and waits indefinitely for another thread to complete.
+Code Example:
+
+synchronized(someObject) {
+    someObject.wait();  // thread goes into WAITING state
+}
+
+5. TIMED_WAITING
+Description: Similar to WAITING, but the thread is waiting for a specified amount of time before it either times out or is interrupted. This state occurs when methods like Thread.sleep() or Object.wait(long timeout) are called with a time limit.
+Trigger: When a thread calls sleep(), wait(long timeout), or join(long millis).
+Code Example:
+
+Thread.sleep(5000);  // thread is in TIMED_WAITING state for 5 seconds
+6. TERMINATED
+Description: A thread is in this state when its run() method has finished execution or it has been explicitly terminated. Once a thread is in this state, it cannot be restarted.
+Trigger: After the thread has completed its task or if an exception occurs in the run() method.
+Code Example:
+
+t.join();  // ensures thread t finishes its execution and enters the TERMINATED state
+Diagram of Thread States:
+NEW → RUNNABLE: When the thread is started (start() is called).
+RUNNABLE ↔ BLOCKED: When a thread tries to acquire a lock.
+RUNNABLE → WAITING/TIMED_WAITING: When a thread waits for another thread or a timeout.
+RUNNABLE → TERMINATED: When the thread finishes execution.
+This state management is crucial for multithreading to ensure thread coordination, resource sharing, and performance optimization.
