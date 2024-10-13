@@ -1,4 +1,4 @@
-package RandomDSA;
+package RandomDSA.Arrays;
 
 import java.util.Arrays;
 

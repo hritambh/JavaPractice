@@ -1,4 +1,4 @@
-package RandomDSA.Arrays;
+package RandomDSA.Arrays.BuySellStocks;
 
 public class BestTimeToBuyAndSellStocks2 {
     public static void main(String[] args) {
