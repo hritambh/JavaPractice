@@ -1,4 +1,4 @@
-package RandomDSA.Strings;
+package DSA.Strings;
 
 import java.util.ArrayList;
 import java.util.HashMap;

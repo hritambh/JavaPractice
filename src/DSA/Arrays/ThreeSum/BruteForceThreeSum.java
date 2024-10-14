@@ -1,4 +1,4 @@
-package RandomDSA.Arrays.ThreeSum;
+package DSA.Arrays.ThreeSum;
 
 /*
 Given an array arr[] of size n and an integer sum. Find if there’s a triplet in the array which sums up to the given integer sum.
