@@ -1,5 +1,7 @@
 package DSA.Arrays.BuySellStocks;
 
+// can buy and sell only once
+
 public class BestTimeToBuyAndSellStocks {
     public static void main(String[] args) {
         int[] arr = {3,1,4,8,7,2,5};
